@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "node to.js"
+  },
   "dependencies": {
     "axios": "^1.7.7",
     "colors": "^1.4.0",

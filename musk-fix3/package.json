@@ -1,11 +1,10 @@
 {
   "scripts": {
-    "dev": "node blum.js"
+    "dev": "node musk.js"
   },
   "dependencies": {
     "axios": "^1.7.2",
-    "colors": "^1.4.0",
     "https-proxy-agent": "^7.0.5",
-    "luxon": "^3.5.0"
+    "luxon": "^3.4.4"
   }
 }
