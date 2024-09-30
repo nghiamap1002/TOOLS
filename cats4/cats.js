@@ -44,13 +44,13 @@ class CatsAPI {
 
     log(msg, type = 'info') {
         const timestamp = new Date().toLocaleTimeString();
-        switch(type) {
+        switch (type) {
             case 'success':
                 console.log(`[${timestamp}] [*] ${msg}`.green);
                 break;
             case 'custom':
                 console.log(`[${timestamp}] [*] ${msg}`);
-                break;        
+                break;
             case 'error':
                 console.log(`[${timestamp}] [!] ${msg}`.red);
                 break;
@@ -75,16 +75,16 @@ class CatsAPI {
         try {
             const tasksResponse = await this.getTasks(authorization);
             const incompleteTasks = tasksResponse.data.tasks.filter(task => !task.completed);
-            
+
             for (const task of incompleteTasks) {
                 try {
                     const timeoutPromise = new Promise((_, reject) =>
                         setTimeout(() => reject(new Error('Task completion timed out')), 15000)
                     );
                     const completePromise = this.completeTask(authorization, task.id);
-                    
+
                     const completeResponse = await Promise.race([completePromise, timeoutPromise]);
-                    
+
                     if (completeResponse.data.success) {
                         this.log(`Làm nhiệm vụ "${task.title}" thành công`, 'success');
                     }
@@ -92,7 +92,7 @@ class CatsAPI {
                     if (error.message === 'Task completion timed out') {
                         this.log(`Nhiệm vụ "${task.title}" bị timeout sau 15 giây`, 'warning');
                     } else {
-//                        this.log(`Lỗi khi làm nhiệm vụ "${task.title}": ${error.message}`, 'error');
+                        //                        this.log(`Lỗi khi làm nhiệm vụ "${task.title}": ${error.message}`, 'error');
                     }
                 }
             }
@@ -112,7 +112,6 @@ class CatsAPI {
         while (true) {
             for (let no = 0; no < data.length; no++) {
                 const authorization = data[no];
-
                 const userInfoResponse = await this.getUserInfo(authorization);
                 const userInfo = userInfoResponse.data;
                 console.log(`========== Tài khoản ${no + 1} | ${userInfo.firstName} ==========`.green);
