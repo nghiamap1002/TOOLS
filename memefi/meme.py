@@ -344,7 +344,7 @@ async def main():
                 recharge_available = user_data['freeBoosts']['currentRefillEnergyAmount']
                 if not should_continue_to_next_account:
                     while energy_now > 500 or recharge_available > 0:
-                        total_tap = random.randint(100, 200)
+                        total_tap = random.randint(1, 10)
                         tap_payload = {
                             "operationName": "MutationGameProcessTapsBatch",
                             "variables": {
