@@ -1,0 +1,1 @@
+query_id=AAFpZ_9zAAAAAGln_3OwdN7O&user=%7B%22id%22%3A1946117993%2C%22first_name%22%3A%22Ngh%C4%A9a%20Ho%C3%A0ng%C2%A0%F0%9F%90%88%E2%80%8D%E2%AC%9B%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22nghiamap102%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1728453860&hash=01db248b8d4a3ca20ac54fff6e9ca45136cc95ab9f3ad3c2a16426fe1bef8416
